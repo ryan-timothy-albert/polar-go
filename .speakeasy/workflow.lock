@@ -1,0 +1,39 @@
+speakeasyVersion: 1.455.7
+sources:
+    Polar-OAS:
+        sourceNamespace: polar-oas
+        sourceRevisionDigest: sha256:f30da726b995d1db21d6bc98c3e543aa1c900f5858115c6fd387d5d4b145e46d
+        sourceBlobDigest: sha256:76b4afe82993867862c297d27fc83ed8feaa0dcd99007d82a66c56454b631a24
+        tags:
+            - latest
+            - 0.1.0
+targets:
+    polar:
+        source: Polar-OAS
+        sourceNamespace: polar-oas
+        sourceRevisionDigest: sha256:f30da726b995d1db21d6bc98c3e543aa1c900f5858115c6fd387d5d4b145e46d
+        sourceBlobDigest: sha256:76b4afe82993867862c297d27fc83ed8feaa0dcd99007d82a66c56454b631a24
+        codeSamplesNamespace: polar-oas-code-samples
+        codeSamplesRevisionDigest: sha256:9224478b34ad5bc0532fedf514276c37f95fe21fb7296d0a7f5850dfce85b0f9
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Polar-OAS:
+            inputs:
+                - location: https://api.polar.sh/openapi.json
+            overlays:
+                - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/security.yml
+                - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/type_parameter.yml
+                - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/product_price_discriminator.yml
+                - location: https://raw.githubusercontent.com/polarsource/polar/main/sdk/overlays/read_only.yml
+            registry:
+                location: registry.speakeasyapi.dev/polar/polar/polar-oas
+    targets:
+        polar:
+            target: go
+            source: Polar-OAS
+            codeSamples:
+                output: codeSamples.yaml
+                registry:
+                    location: registry.speakeasyapi.dev/polar/polar/polar-oas-code-samples

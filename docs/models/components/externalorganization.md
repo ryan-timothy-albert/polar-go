@@ -1,0 +1,20 @@
+# ExternalOrganization
+
+
+## Fields
+
+| Field                                                        | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `ID`                                                         | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          |
+| `Platform`                                                   | [components.Platforms](../../models/components/platforms.md) | :heavy_check_mark:                                           | N/A                                                          |
+| `Name`                                                       | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          |
+| `AvatarURL`                                                  | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          |
+| `IsPersonal`                                                 | *bool*                                                       | :heavy_check_mark:                                           | N/A                                                          |
+| `Bio`                                                        | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          |
+| `PrettyName`                                                 | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          |
+| `Company`                                                    | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          |
+| `Blog`                                                       | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          |
+| `Location`                                                   | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          |
+| `Email`                                                      | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          |
+| `TwitterUsername`                                            | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          |
+| `OrganizationID`                                             | *string*                                                     | :heavy_check_mark:                                           | N/A                                                          |

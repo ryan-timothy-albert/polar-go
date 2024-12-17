@@ -1,0 +1,10 @@
+# BenefitDiscordUpdate
+
+
+## Fields
+
+| Field                                                                                                   | Type                                                                                                    | Required                                                                                                | Description                                                                                             |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| `Description`                                                                                           | **string*                                                                                               | :heavy_minus_sign:                                                                                      | The description of the benefit. Will be displayed on products having this benefit.                      |
+| `Type`                                                                                                  | [components.BenefitDiscordUpdateType](../../models/components/benefitdiscordupdatetype.md)              | :heavy_check_mark:                                                                                      | N/A                                                                                                     |
+| `Properties`                                                                                            | [*components.BenefitDiscordCreateProperties](../../models/components/benefitdiscordcreateproperties.md) | :heavy_minus_sign:                                                                                      | N/A                                                                                                     |
