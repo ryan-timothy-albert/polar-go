@@ -3,8 +3,8 @@
 package operations
 
 import (
-	"polar/internal/utils"
-	"polar/models/components"
+	"github.com/polarsource/polar-go/internal/utils"
+	"github.com/polarsource/polar-go/models/components"
 )
 
 type AdvertisementsListRequest struct {

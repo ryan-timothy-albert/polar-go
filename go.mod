@@ -1,4 +1,4 @@
-module polar
+module github.com/polarsource/polar-go
 
 go 1.20
 

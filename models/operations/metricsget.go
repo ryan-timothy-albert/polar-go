@@ -5,9 +5,9 @@ package operations
 import (
 	"errors"
 	"fmt"
-	"polar/internal/utils"
-	"polar/models/components"
-	"polar/types"
+	"github.com/polarsource/polar-go/internal/utils"
+	"github.com/polarsource/polar-go/models/components"
+	"github.com/polarsource/polar-go/types"
 )
 
 type MetricsGetQueryParamOrganizationIDFilterType string

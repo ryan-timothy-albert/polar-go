@@ -3,10 +3,9 @@
 package components
 
 import (
-	"encoding/json"
 	"errors"
 	"fmt"
-	"polar/internal/utils"
+	"github.com/polarsource/polar-go/internal/utils"
 	"time"
 )
 
@@ -95,29 +94,6 @@ func (u CustomFieldNumberMetadata) MarshalJSON() ([]byte, error) {
 	return nil, errors.New("could not marshal union type CustomFieldNumberMetadata: all fields are null")
 }
 
-type CustomFieldNumberType string
-
-const (
-	CustomFieldNumberTypeNumber CustomFieldNumberType = "number"
-)
-
-func (e CustomFieldNumberType) ToPointer() *CustomFieldNumberType {
-	return &e
-}
-func (e *CustomFieldNumberType) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
-	}
-	switch v {
-	case "number":
-		*e = CustomFieldNumberType(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CustomFieldNumberType: %v", v)
-	}
-}
-
 // CustomFieldNumber - Schema for a custom field of type number.
 type CustomFieldNumber struct {
 	// Creation timestamp of the object.
@@ -127,7 +103,7 @@ type CustomFieldNumber struct {
 	// The ID of the object.
 	ID       string                               `json:"id"`
 	Metadata map[string]CustomFieldNumberMetadata `json:"metadata"`
-	type_    CustomFieldNumberType                `const:"number" json:"type"`
+	type_    string                               `const:"number" json:"type"`
 	// Identifier of the custom field. It'll be used as key when storing the value.
 	Slug string `json:"slug"`
 	// Name of the custom field.
@@ -176,8 +152,8 @@ func (o *CustomFieldNumber) GetMetadata() map[string]CustomFieldNumberMetadata {
 	return o.Metadata
 }
 
-func (o *CustomFieldNumber) GetType() CustomFieldNumberType {
-	return CustomFieldNumberTypeNumber
+func (o *CustomFieldNumber) GetType() string {
+	return "number"
 }
 
 func (o *CustomFieldNumber) GetSlug() string {

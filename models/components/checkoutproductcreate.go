@@ -3,10 +3,9 @@
 package components
 
 import (
-	"encoding/json"
 	"errors"
 	"fmt"
-	"polar/internal/utils"
+	"github.com/polarsource/polar-go/internal/utils"
 )
 
 type CheckoutProductCreateMetadataType string
@@ -96,30 +95,6 @@ func (u CheckoutProductCreateMetadata) MarshalJSON() ([]byte, error) {
 
 // CheckoutProductCreateCustomFieldData - Key-value object storing custom field values.
 type CheckoutProductCreateCustomFieldData struct {
-}
-
-// CheckoutProductCreatePaymentProcessor - Payment processor to use. Currently only Stripe is supported.
-type CheckoutProductCreatePaymentProcessor string
-
-const (
-	CheckoutProductCreatePaymentProcessorStripe CheckoutProductCreatePaymentProcessor = "stripe"
-)
-
-func (e CheckoutProductCreatePaymentProcessor) ToPointer() *CheckoutProductCreatePaymentProcessor {
-	return &e
-}
-func (e *CheckoutProductCreatePaymentProcessor) UnmarshalJSON(data []byte) error {
-	var v string
-	if err := json.Unmarshal(data, &v); err != nil {
-		return err
-	}
-	switch v {
-	case "stripe":
-		*e = CheckoutProductCreatePaymentProcessor(v)
-		return nil
-	default:
-		return fmt.Errorf("invalid value for CheckoutProductCreatePaymentProcessor: %v", v)
-	}
 }
 
 type CheckoutProductCreateCustomerMetadataType string
@@ -226,7 +201,7 @@ type CheckoutProductCreate struct {
 	// Key-value object storing custom field values.
 	CustomFieldData *CheckoutProductCreateCustomFieldData `json:"custom_field_data,omitempty"`
 	// Payment processor to use. Currently only Stripe is supported.
-	paymentProcessor CheckoutProductCreatePaymentProcessor `const:"stripe" json:"payment_processor"`
+	paymentProcessor string `const:"stripe" json:"payment_processor"`
 	// ID of the discount to apply to the checkout.
 	DiscountID *string `json:"discount_id,omitempty"`
 	// Whether to allow the customer to apply discount codes. If you apply a discount through `discount_id`, it'll still be applied, but the customer won't be able to change it.
@@ -285,8 +260,8 @@ func (o *CheckoutProductCreate) GetCustomFieldData() *CheckoutProductCreateCusto
 	return o.CustomFieldData
 }
 
-func (o *CheckoutProductCreate) GetPaymentProcessor() CheckoutProductCreatePaymentProcessor {
-	return CheckoutProductCreatePaymentProcessorStripe
+func (o *CheckoutProductCreate) GetPaymentProcessor() string {
+	return "stripe"
 }
 
 func (o *CheckoutProductCreate) GetDiscountID() *string {

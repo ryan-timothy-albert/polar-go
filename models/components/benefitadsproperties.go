@@ -3,7 +3,7 @@
 package components
 
 import (
-	"polar/internal/utils"
+	"github.com/polarsource/polar-go/internal/utils"
 )
 
 // BenefitAdsProperties - Properties for a benefit of type `ads`.

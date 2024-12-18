@@ -22,15 +22,15 @@ package main
 import(
 	"context"
 	"os"
-	"polar"
+	polargo "github.com/polarsource/polar-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := polar.New(
-        polar.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
+    s := polargo.New(
+        polargo.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
     )
 
     res, err := s.Organizations.List(ctx, nil, nil, nil, nil)
@@ -89,16 +89,16 @@ package main
 import(
 	"context"
 	"os"
-	"polar"
-	"polar/models/components"
+	polargo "github.com/polarsource/polar-go"
+	"github.com/polarsource/polar-go/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := polar.New(
-        polar.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
+    s := polargo.New(
+        polargo.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
     )
 
     res, err := s.Organizations.Create(ctx, components.OrganizationCreate{
@@ -145,15 +145,15 @@ package main
 import(
 	"context"
 	"os"
-	"polar"
+	polargo "github.com/polarsource/polar-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := polar.New(
-        polar.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
+    s := polargo.New(
+        polargo.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
     )
 
     res, err := s.Organizations.Get(ctx, "<value>")
@@ -198,16 +198,16 @@ package main
 import(
 	"context"
 	"os"
-	"polar"
-	"polar/models/components"
+	polargo "github.com/polarsource/polar-go"
+	"github.com/polarsource/polar-go/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := polar.New(
-        polar.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
+    s := polargo.New(
+        polargo.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
     )
 
     res, err := s.Organizations.Update(ctx, "<value>", components.OrganizationUpdate{})

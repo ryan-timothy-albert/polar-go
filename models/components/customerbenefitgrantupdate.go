@@ -6,7 +6,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"polar/internal/utils"
+	"github.com/polarsource/polar-go/internal/utils"
 )
 
 type CustomerBenefitGrantUpdateType string

@@ -5,7 +5,7 @@ package operations
 import (
 	"encoding/json"
 	"fmt"
-	"polar/models/components"
+	"github.com/polarsource/polar-go/models/components"
 )
 
 type Oauth2IntrospectTokenTokenTypeHint string

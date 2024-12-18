@@ -5,7 +5,7 @@ package components
 import (
 	"errors"
 	"fmt"
-	"polar/internal/utils"
+	"github.com/polarsource/polar-go/internal/utils"
 )
 
 type CheckoutLinkUpdateMetadataType string

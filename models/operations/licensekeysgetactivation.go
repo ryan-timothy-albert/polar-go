@@ -3,7 +3,7 @@
 package operations
 
 import (
-	"polar/models/components"
+	"github.com/polarsource/polar-go/models/components"
 )
 
 type LicenseKeysGetActivationRequest struct {
