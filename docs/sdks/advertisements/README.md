@@ -20,15 +20,15 @@ package main
 import(
 	"context"
 	"os"
-	"polar"
+	polargo "github.com/polarsource/polar-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := polar.New(
-        polar.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
+    s := polargo.New(
+        polargo.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
     )
 
     res, err := s.Advertisements.List(ctx, "<value>", nil, nil, nil)
@@ -87,15 +87,15 @@ package main
 import(
 	"context"
 	"os"
-	"polar"
+	polargo "github.com/polarsource/polar-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := polar.New(
-        polar.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
+    s := polargo.New(
+        polargo.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
     )
 
     res, err := s.Advertisements.Get(ctx, "<value>")

@@ -3,7 +3,7 @@
 package webhooks
 
 import (
-	"polar/models/components"
+	"github.com/polarsource/polar-go/models/components"
 )
 
 type EndpointpledgeCreatedPostResponse struct {

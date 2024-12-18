@@ -4,8 +4,8 @@ package operations
 
 import (
 	"errors"
-	"polar/internal/utils"
-	"polar/retry"
+	"github.com/polarsource/polar-go/internal/utils"
+	"github.com/polarsource/polar-go/retry"
 	"time"
 )
 

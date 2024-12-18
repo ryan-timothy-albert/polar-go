@@ -23,15 +23,15 @@ package main
 import(
 	"context"
 	"os"
-	"polar"
+	polargo "github.com/polarsource/polar-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := polar.New(
-        polar.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
+    s := polargo.New(
+        polargo.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
     )
 
     res, err := s.Files.List(ctx, nil, nil, nil, nil)
@@ -90,16 +90,16 @@ package main
 import(
 	"context"
 	"os"
-	"polar"
-	"polar/models/components"
+	polargo "github.com/polarsource/polar-go"
+	"github.com/polarsource/polar-go/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := polar.New(
-        polar.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
+    s := polargo.New(
+        polargo.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
     )
 
     res, err := s.Files.Create(ctx, components.CreateFileCreateProductMediaFileCreate(
@@ -158,16 +158,16 @@ package main
 import(
 	"context"
 	"os"
-	"polar"
-	"polar/models/components"
+	polargo "github.com/polarsource/polar-go"
+	"github.com/polarsource/polar-go/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := polar.New(
-        polar.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
+    s := polargo.New(
+        polargo.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
     )
 
     res, err := s.Files.Uploaded(ctx, "<value>", components.FileUploadCompleted{
@@ -177,17 +177,17 @@ func main() {
             components.S3FileUploadCompletedPart{
                 Number: 173116,
                 ChecksumEtag: "<value>",
-                ChecksumSha256Base64: polar.String("<value>"),
+                ChecksumSha256Base64: polargo.String("<value>"),
             },
             components.S3FileUploadCompletedPart{
                 Number: 894030,
                 ChecksumEtag: "<value>",
-                ChecksumSha256Base64: polar.String("<value>"),
+                ChecksumSha256Base64: polargo.String("<value>"),
             },
             components.S3FileUploadCompletedPart{
                 Number: 673715,
                 ChecksumEtag: "<value>",
-                ChecksumSha256Base64: polar.String("<value>"),
+                ChecksumSha256Base64: polargo.String("<value>"),
             },
         },
     })
@@ -234,16 +234,16 @@ package main
 import(
 	"context"
 	"os"
-	"polar"
-	"polar/models/components"
+	polargo "github.com/polarsource/polar-go"
+	"github.com/polarsource/polar-go/models/components"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := polar.New(
-        polar.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
+    s := polargo.New(
+        polargo.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
     )
 
     res, err := s.Files.Update(ctx, "<value>", components.FilePatch{})
@@ -290,15 +290,15 @@ package main
 import(
 	"context"
 	"os"
-	"polar"
+	polargo "github.com/polarsource/polar-go"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := polar.New(
-        polar.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
+    s := polargo.New(
+        polargo.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
     )
 
     res, err := s.Files.Delete(ctx, "<value>")

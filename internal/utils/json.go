@@ -13,7 +13,7 @@ import (
 	"time"
 	"unsafe"
 
-	"polar/types"
+	"github.com/polarsource/polar-go/types"
 
 	"github.com/ericlagergren/decimal"
 )

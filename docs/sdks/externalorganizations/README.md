@@ -19,16 +19,16 @@ package main
 import(
 	"context"
 	"os"
-	"polar"
-	"polar/models/operations"
+	polargo "github.com/polarsource/polar-go"
+	"github.com/polarsource/polar-go/models/operations"
 	"log"
 )
 
 func main() {
     ctx := context.Background()
     
-    s := polar.New(
-        polar.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
+    s := polargo.New(
+        polargo.WithSecurity(os.Getenv("POLAR_ACCESS_TOKEN")),
     )
 
     res, err := s.ExternalOrganizations.List(ctx, operations.ExternalOrganizationsListRequest{})
